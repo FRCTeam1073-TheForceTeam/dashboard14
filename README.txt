@@ -1,0 +1,1 @@
+This is the repository where all of the code that will go into our SmartDashboard of 2014. We will continuously add more and more code to the SmartDashboard to improve the overall quality of it. We will have many widgets and visual advantages added in the Dashboard.
