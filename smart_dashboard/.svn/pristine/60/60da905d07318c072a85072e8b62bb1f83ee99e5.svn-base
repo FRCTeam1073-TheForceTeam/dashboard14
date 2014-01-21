@@ -1,0 +1,7 @@
+compile.on.save=false
+do.depend=false
+do.jar=true
+javac.debug=true
+javadoc.preview=true
+project.WPIJavaCV=C:\\Users\\Paul\\Documents\\NetBeansProjects\\SmartDashboardProject\\WPIJavaCV
+user.properties.file=C:\\Users\\Paul\\.netbeans\\6.9\\build.properties
