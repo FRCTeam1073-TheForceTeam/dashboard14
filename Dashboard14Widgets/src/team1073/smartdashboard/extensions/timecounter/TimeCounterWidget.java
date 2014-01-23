@@ -1,4 +1,6 @@
-package team1073.smartdashboard.extensions.battery;
+
+package team1073.smartdashboard.extensions.timecounter;
+
 
 import edu.wpi.first.smartdashboard.gui.Widget;
 import edu.wpi.first.smartdashboard.properties.Property;
@@ -7,7 +9,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 
-public class BatteryWidget extends Widget
+public class TimeCounterWidget extends Widget
 {
     /*
     if robot == no connection
@@ -17,14 +19,16 @@ public class BatteryWidget extends Widget
     Only use in comp. secret hack 
     */ 
     public static final DataType[] TYPES = {DataType.NUMBER };
-    public static final String NAME = "Battery";
-    private double value = 0.0;
-    private String voltage = "";
+    public static final String NAME = "TimeCounterWidget";
+    private int value = 0;
+    private int minutes;
+    private int seconds;
+
 
     @Override
     public void setValue(Object o) 
     {
-        this.value = ((Number) value).doubleValue();
+        this.value = ((Number) value).intValue();
         
         repaint();
 
@@ -50,21 +54,17 @@ public class BatteryWidget extends Widget
         g.setColor(Color.black);
         g.fillRect(0, 0, size.width, size.height);
         
-        int fillage = (int) (size.height * value / 13);
-        if (value < 10)
-            g.setColor(Color.yellow);
-        else if (value < 8)
+        minutes = value / 60;
+        seconds = value % 60;
+        
+        if (minutes == 2)
+        {
             g.setColor(Color.red);
+        }
         else
-            g.setColor(Color.green);
-        g.fillRect(0, size.height - fillage, size.width, size.height);
+            g.setColor(Color.WHITE);
         
-        g.setColor(Color.black);
-        g.drawRect(0, 0, size.width - 1, size.height - 1);
-        
-        voltage = value + "V";
-        g.drawString(voltage, size.width/4, size.height/2);
-        
+        g.drawString(minutes + ";" + seconds, size.width /6, size.height / 6);
         
         
     }
