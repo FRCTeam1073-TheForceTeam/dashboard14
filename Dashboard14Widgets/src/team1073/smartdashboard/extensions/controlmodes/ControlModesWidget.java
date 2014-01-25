@@ -24,6 +24,7 @@ public class ControlModesWidget extends Widget
 
     
     public ControlModesWidget(){
+        /*This constructor is only necessary for testing purposes*/
         controlModes.add("Off", -1);
         controlModes.add("Autonomous", 0);
         controlModes.add("TeleOp", 1);
