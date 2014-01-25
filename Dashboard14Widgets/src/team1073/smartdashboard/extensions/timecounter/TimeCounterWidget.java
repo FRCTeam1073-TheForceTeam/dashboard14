@@ -28,9 +28,9 @@ public class TimeCounterWidget extends Widget
 
     public TimeCounterWidget(){
         /*This constructor is only necessary for testing purposes*/
-        timeCount.add("Match Not Started", 120);
-        timeCount.add("90", 90);
-        timeCount.add("60", 60);
+        timeCount.add("Match Not Started", 150);
+        timeCount.add("120", 120);
+        timeCount.add("60", 80);
         timeCount.add("45", 45);
 
     }
@@ -68,7 +68,7 @@ public class TimeCounterWidget extends Widget
         minutes = value / 60;
         seconds = value % 60;
         
-        if (minutes == 2)
+        if (minutes == 2 && seconds == 30)
         {
             g.setColor(Color.WHITE);
         }
@@ -77,9 +77,14 @@ public class TimeCounterWidget extends Widget
         }
         g.fillRect(0, 0, size.width, size.height);
         g.setColor(Color.BLACK);
-        g.drawString(minutes + ":" + seconds, size.width /4, size.height / 4);
-        
-        
+        if (seconds == 0)
+        {
+            g.drawString(minutes + ":" + seconds + 0, size.width /4, size.height / 4);
+        }
+        if (seconds != 0)
+        {
+            g.drawString(minutes + ":" + seconds, size.width /4, size.height / 4);
+        }
     }
     
 }
