@@ -10,13 +10,6 @@ import java.awt.Graphics;
 
 public class BatteryWidget extends Widget
 {
-    /*
-    if robot == no connection
-            {
-                use 'my laptop' battery;
-            } 
-    Only use in comp. secret hack 
-    */ 
     public static final DataType[] TYPES = {DataType.NUMBER };
     public static final String NAME = "Battery";
     private double value = 0.0;

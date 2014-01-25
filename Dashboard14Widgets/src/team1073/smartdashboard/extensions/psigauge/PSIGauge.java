@@ -19,7 +19,7 @@ public class PSIGauge extends Widget
 {
     public static final DataType[] TYPES = {DataType.NUMBER };
     public static final String NAME = "PSI Gauge";
-    private double value = 0;
+    private double value = 0.0;
         private JTextField jTextField2;
 
     
