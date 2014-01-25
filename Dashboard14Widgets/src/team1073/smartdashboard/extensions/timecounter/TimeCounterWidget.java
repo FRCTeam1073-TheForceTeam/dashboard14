@@ -3,6 +3,7 @@ package team1073.smartdashboard.extensions.timecounter;
 
 
 import edu.wpi.first.smartdashboard.gui.Widget;
+import edu.wpi.first.smartdashboard.properties.MultiProperty;
 import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
 import java.awt.Color;
@@ -23,12 +24,22 @@ public class TimeCounterWidget extends Widget
     private int value = 0;
     private int minutes;
     private int seconds;
+    public final MultiProperty timeCount = new MultiProperty(this, "Time");
 
+    public TimeCounterWidget(){
+        /*This constructor is only necessary for testing purposes*/
+        timeCount.add("Match Not Started", 120);
+        timeCount.add("90", 90);
+        timeCount.add("60", 60);
+        timeCount.add("45", 45);
 
+    }
+    
+    
     @Override
     public void setValue(Object o) 
     {
-        this.value = ((Number) value).intValue();
+        this.value = ((Number) o).intValue();
         
         repaint();
 
@@ -37,13 +48,13 @@ public class TimeCounterWidget extends Widget
     @Override
     public void init() 
     {
-        setPreferredSize(new Dimension(50, 127));
+        setPreferredSize(new Dimension(127, 50));
     }
 
     @Override
     public void propertyChanged(Property prprt) 
     {
-   
+         setValue(prprt.getValue());
     }
     
     @Override
@@ -59,12 +70,14 @@ public class TimeCounterWidget extends Widget
         
         if (minutes == 2)
         {
-            g.setColor(Color.red);
-        }
-        else
             g.setColor(Color.WHITE);
-        
-        g.drawString(minutes + ":" + seconds, size.width /6, size.height / 6);
+        }
+        else{
+            g.setColor(Color.GREEN);
+        }
+        g.fillRect(0, 0, size.width, size.height);
+        g.setColor(Color.BLACK);
+        g.drawString(minutes + ":" + seconds, size.width /4, size.height / 4);
         
         
     }
