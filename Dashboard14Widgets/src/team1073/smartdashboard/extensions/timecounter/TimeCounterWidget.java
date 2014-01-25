@@ -64,7 +64,7 @@ public class TimeCounterWidget extends Widget
         else
             g.setColor(Color.WHITE);
         
-        g.drawString(minutes + ";" + seconds, size.width /6, size.height / 6);
+        g.drawString(minutes + ":" + seconds, size.width /6, size.height / 6);
         
         
     }
