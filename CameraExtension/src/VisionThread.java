@@ -10,7 +10,7 @@ import javax.swing.SwingWorker;
 
 /**
  *
- * @author Greg + P-Sizzle
+ * @author Greg 
  */
 public class VisionThread extends SwingWorker<Boolean, String>{
 
