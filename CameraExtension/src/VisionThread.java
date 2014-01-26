@@ -14,26 +14,31 @@ import javax.swing.SwingWorker;
  */
 public class VisionThread extends SwingWorker<Boolean, String>{
 
-    NetworkTable visionTable;
     RR_API roboRealm;
     private boolean HOT;
+    private boolean HOT_OLD;
     int counter;
     public VisionThread()
     {
-        visionTable = NetworkTable.getTable("visionTable");
+        //visionTable = NetworkTable.getTable("visionTable");
         roboRealm = new RR_API();
+        roboRealm.connect("localhost");
         counter = 0;
     }
     
     @Override
     protected Boolean doInBackground() throws Exception {
-        
-        //wait(100);
-        getRRVars();
-        counter++;
-        visionTable.putBoolean("HOT" +counter, HOT);
-        publish("Complete");
-        setProgress(100);
+        while (!isDone() && !isCancelled()) {
+            //wait(100);
+
+            getRRVars();
+            counter++;
+            //visionTable.putBoolean("HOT" +counter, HOT);
+            firePropertyChange("HOT", HOT_OLD, HOT);
+            HOT_OLD = HOT;
+            /*publish("Complete");
+            setProgress(100);*/
+        }
         return true;
     }
     
@@ -51,6 +56,7 @@ public class VisionThread extends SwingWorker<Boolean, String>{
         catch (Exception e)
         {
             System.out.println(e);
+            e.printStackTrace();
         }
     }
     
