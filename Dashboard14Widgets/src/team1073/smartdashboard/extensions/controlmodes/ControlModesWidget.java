@@ -13,6 +13,7 @@ import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 
 public class ControlModesWidget extends Widget
@@ -67,7 +68,8 @@ public class ControlModesWidget extends Widget
             g.setColor(Color.RED);
             g.fillRect(0, 0, size.width, size.height);
             g.setColor(Color.black);
-            g.drawString(mode, size.width/5, size.height/5);
+            g.setFont(new Font ("Default", Font.BOLD, 18));
+            g.drawString(mode, size.width/13, (int) (size.height/1.6));
         }
         else if (value == 0)
         {
@@ -75,7 +77,8 @@ public class ControlModesWidget extends Widget
             g.setColor(Color.orange);
             g.fillRect(0, 0, size.width, size.height);
             g.setColor(Color.black);
-            g.drawString(mode, size.width/5, size.height/5);
+            g.setFont(new Font ("Default", Font.BOLD, 18));
+            g.drawString(mode, size.width/13, (int) (size.height/1.6));
         }
         else
         {
@@ -83,7 +86,8 @@ public class ControlModesWidget extends Widget
          g.setColor(Color.GREEN);
          g.fillRect(0, 0, size.width, size.height);
          g.setColor(Color.black);
-         g.drawString(mode, size.width/5, size.height/5);
+         g.setFont(new Font ("Default", Font.BOLD, 18));
+         g.drawString(mode, size.width/16, (int) (size.height/1.6));
         }
         
         

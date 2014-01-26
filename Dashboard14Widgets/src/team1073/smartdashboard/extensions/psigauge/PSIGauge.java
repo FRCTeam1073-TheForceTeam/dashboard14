@@ -12,6 +12,7 @@ import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 
 public class PSIGauge extends Widget 
@@ -63,21 +64,24 @@ public class PSIGauge extends Widget
             g.setColor(Color.GREEN);
             g.fillRect(0, size.height - (int) (value), size.width,size.height);
             g.setColor(Color.WHITE);
-            g.drawString("Two Shots Ready", size.width /3, size.height / 5);
+            g.setFont(new Font("Default", Font.BOLD, 22));
+            g.drawString("Two Shots Ready", size.width /17, (int) (size.height/2));
         }
         else if (value < 60.0 && value > 30.0)
         {
             g.setColor(Color.YELLOW);
             g.fillRect(0, size.height - (int) (value), size.width,size.height);
             g.setColor(Color.WHITE);
-            g.drawString("One Shot Ready", size.width /3, size.height / 5);
+            g.setFont(new Font("Default", Font.BOLD, 22));
+            g.drawString("One Shot Ready", size.width /10, (int) (size.height/2));
         }
         else if (value <= 30.0)
         {
               g.setColor(Color.RED);
               g.fillRect(0, size.height - (int) (value), size.width,size.height);
               g.setColor(Color.WHITE);
-              g.drawString("Not Ready", size.width /3, size.height / 5);
+              g.setFont(new Font("Default", Font.BOLD, 32));
+              g.drawString("Not Ready", size.width /10, (int) (size.height/2));
         }
        
     }
