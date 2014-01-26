@@ -6,6 +6,7 @@ import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 
 public class BatteryWidget extends Widget
@@ -20,7 +21,7 @@ public class BatteryWidget extends Widget
         /*This constructor is only necessary for testing purposes*/
         batteryStatus.add("Low Battery", 5);
         batteryStatus.add("Battery Ready", 12);
-        batteryStatus.add("Battery Lowish", 9);
+        batteryStatus.add("Battery Relatively Low", 9);
         batteryStatus.setDefault("No Data");
     }
 
@@ -57,7 +58,7 @@ public class BatteryWidget extends Widget
         if (value < 8)
             g.setColor(Color.red);
         else if (value < 10)
-            g.setColor(Color.yellow);
+            g.setColor(Color.orange);
         else
             g.setColor(Color.green);
         g.fillRect(0, size.height - fillage, size.width, size.height);
@@ -65,11 +66,12 @@ public class BatteryWidget extends Widget
         g.setColor(Color.black);
         g.drawRect(0, 0, size.width - 1, size.height - 1);
         
-        if(value == 0.0 || value < 8){
-            g.setColor(Color.WHITE);
+        if(value == 0.0 || value < 10){
+            g.setColor(Color.CYAN);
         }
         voltage = value + "V";
-        g.drawString(voltage, size.width/4, size.height/2);
+        g.setFont(new Font ("default", Font.BOLD, 32));
+        g.drawString(voltage, size.width/4, (int) (size.height/1.4));
         
         
         
