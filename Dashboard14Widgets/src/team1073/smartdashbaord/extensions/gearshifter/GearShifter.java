@@ -7,7 +7,7 @@
 package team1073.smartdashbaord.extensions.gearshifter;
 
 
-import edu.wpi.first.smartdashboard.gui.StaticWidget;
+import edu.wpi.first.smartdashboard.gui.Widget;
 import edu.wpi.first.smartdashboard.properties.MultiProperty;
 import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
@@ -16,7 +16,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 
-public class GearShifter extends StaticWidget
+public class GearShifter extends Widget
 {
     public static final DataType[] TYPES = {DataType.NUMBER };
     public static final String NAME = "Gear Shifter";
@@ -29,7 +29,7 @@ public class GearShifter extends StaticWidget
         gearStatus.add("Gear One", 0);
         gearStatus.add("Gear Two", 1);
     }
-    //@Override
+    @Override
     public void setValue(Object o) 
     {
         this.value = ((Number) o).intValue();

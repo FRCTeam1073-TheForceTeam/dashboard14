@@ -8,6 +8,7 @@ import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 
 public class TimeCounterWidget extends Widget
@@ -79,11 +80,13 @@ public class TimeCounterWidget extends Widget
         g.setColor(Color.BLACK);
         if (seconds == 0)
         {
-            g.drawString(minutes + ":" + seconds + 0, size.width /4, size.height / 4);
+            g.setFont(new Font ("Default", Font.BOLD, 32));
+            g.drawString(minutes + ":" + seconds + 0, size.width/4, (int) (size.height/1.5));
         }
         if (seconds != 0)
         {
-            g.drawString(minutes + ":" + seconds, size.width /4, size.height / 4);
+            g.setFont(new Font ("Default", Font.BOLD, 32));
+            g.drawString(minutes + ":" + seconds, size.width/4, (int) (size.height/1.5));
         }
     }
     
