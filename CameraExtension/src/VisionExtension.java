@@ -38,9 +38,8 @@ public class VisionExtension extends StaticWidget{
 
     @Override
     public void init() {
-            table = NetworkTable.getTable("testing");
+            table = NetworkTable.getTable("visionTable");
             System.out.printf("Connected: %s, Server: %s\n", table.isConnected() ? "true" : "false", table.isServer() ? "true" : "false");
-            table.putNumber("Testt", 1234);
             setPreferredSize(new Dimension(100, 100));
             worker = new VisionThread();
             worker.addPropertyChangeListener(new PropertyChangeListener() {
