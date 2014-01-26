@@ -1,14 +1,15 @@
 package team1073.smartdashboard.extensions.shooterready;
 
-import edu.wpi.first.smartdashboard.gui.Widget;
+import edu.wpi.first.smartdashboard.gui.StaticWidget;
 import edu.wpi.first.smartdashboard.properties.MultiProperty;
 import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 
-public class ShooterReadyWidget extends Widget
+public class ShooterReadyWidget extends StaticWidget
 {
     public static final DataType[] TYPES = {DataType.NUMBER };
     public static final String NAME = "Shooter Ready";
@@ -23,7 +24,7 @@ public class ShooterReadyWidget extends Widget
         shooterReady.add("All Systems Nominal", 1);
     }
 
-    @Override
+    //@Override
     public void setValue(Object o) 
     {
         this.value = ((Number) o).intValue();
@@ -35,7 +36,7 @@ public class ShooterReadyWidget extends Widget
     @Override
     public void init() 
     {
-        setPreferredSize(new Dimension(250, 50));
+        setPreferredSize(new Dimension(360, 50));
 
     }
 
@@ -77,19 +78,23 @@ public class ShooterReadyWidget extends Widget
         g.setColor(Color.BLACK);
         if (value == -2) //if value is -2 PSI is too low and distance is not safe to shoot
         {
-            g.drawString("PSI Low / Distance Wrong", size.width/4, size.height/2);
+            g.setFont(new Font ("default", Font.BOLD, 26));
+            g.drawString("PSI Low / Distance Wrong", size.width/19, (int) (size.height/1.5));
         }
         else if (value == -1) //if value is -1 PSI is too low but distance is okay
         {
-            g.drawString("PSI Low / Distance Okay", size.width/4, size.height/2);
+            g.setFont(new Font ("default", Font.BOLD, 26));
+            g.drawString("PSI Low / Distance Okay", size.width/19, (int) (size.height/1.5));
         }
         else if (value == 0) //if value is 0 PSI is enough to shoot but distance is wrong
         {
-            g.drawString("PSI Okay / Distance Wrong", size.width/4, size.height/2);
+            g.setFont(new Font ("default", Font.BOLD, 26));
+            g.drawString("PSI Okay / Distance Wrong", size.width/19, (int) (size.height/1.5));
         }
         else if (value == 1) //if value is 1 PSI is okay and distance is also okay
         {
-            g.drawString("Shooter Ready!", size.width/4, size.height/2);
+            g.setFont(new Font("default", Font.BOLD, 32));
+            g.drawString("Shooter Ready!", size.width/6, (int) (size.height/1.3));
         }
     }
     
