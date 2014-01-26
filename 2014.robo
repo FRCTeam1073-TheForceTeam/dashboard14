@@ -1,0 +1,98 @@
+<head><version>2.59.0</version></head>
+<Axis_Internet_Camera>
+  <auto_back_light>TRUE</auto_back_light>
+  <auto_exposure>FALSE</auto_exposure>
+  <auto_white_balance>TRUE</auto_white_balance>
+  <brightness_value>50</brightness_value>
+  <camera_type>1</camera_type>
+  <color_level_value>50</color_level_value>
+  <compression_index>5</compression_index>
+  <contrast_value>50</contrast_value>
+  <exposure_value>50</exposure_value>
+  <ip_address>10.10.73.9</ip_address>
+  <is_active>TRUE</is_active>
+  <password>admin</password>
+  <port>80</port>
+  <resolution>3</resolution>
+  <sharpness_value>50</sharpness_value>
+  <username>root</username>
+</Axis_Internet_Camera>
+<Radial_Distortion>
+  <center_x>0.5</center_x>
+  <center_y>0.5</center_y>
+  <coeff_a>-1121</coeff_a>
+  <coeff_b>0.525</coeff_b>
+  <coeff_c>0.0</coeff_c>
+  <coeff_d>0.0</coeff_d>
+  <coeff_e>0.0</coeff_e>
+  <crop_image>FALSE</crop_image>
+  <scale>1000.0</scale>
+</Radial_Distortion>
+<Color_Filter>
+  <adjust_lighting>FALSE</adjust_lighting>
+  <colors>#3EDFBE
+
+#D7E809
+
+</colors>
+  <color_bias>1.0</color_bias>
+  <match_distance>80</match_distance>
+  <min_color>100</min_color>
+  <min_intensity>100</min_intensity>
+</Color_Filter>
+<RGB_Filter disabled>
+  <channel>66</channel>
+  <hue_value>50</hue_value>
+  <hysteresis>0</hysteresis>
+  <min_value>100</min_value>
+</RGB_Filter>
+<Write_Images disabled>
+  <filename>C:\MatchImages2014\image.jpeg</filename>
+  <image_to_save>Current</image_to_save>
+  <is_recording>FALSE</is_recording>
+  <jpeg_quality>2</jpeg_quality>
+  <limit_frames>10000</limit_frames>
+  <limit_time_number>1</limit_time_number>
+  <limit_time_type>3</limit_time_type>
+  <number_from>1</number_from>
+  <number_images>TRUE</number_images>
+  <write_immediately>TRUE</write_immediately>
+</Write_Images>
+<Write_AVI>
+  <codec>Intel IYUV codec</codec>
+  <filename>C:\MatchImages2014\Match.avi</filename>
+  <fps>30</fps>
+  <image_to_save>Source</image_to_save>
+  <is_recording>FALSE</is_recording>
+  <key_frame_every>1000</key_frame_every>
+  <limit_frames>10000</limit_frames>
+  <limit_time_number>1</limit_time_number>
+  <limit_time_type>3</limit_time_type>
+  <quality>10</quality>
+  <real_time>1</real_time>
+</Write_AVI>
+<Convex_Hull/>
+<Blob_Replace>
+  <color_index>6</color_index>
+  <fill_shape>TRUE</fill_shape>
+  <order_array_on_x>FALSE</order_array_on_x>
+  <order_array_on_y>FALSE</order_array_on_y>
+  <thickness>1</thickness>
+</Blob_Replace>
+<Blob_Count/>
+<Display_DateTime>
+  <custom_format>MM/DD/YYYY HH:MI:SS PM</custom_format>
+  <display_as_annotation>FALSE</display_as_annotation>
+  <font_size>2</font_size>
+  <format>2</format>
+  <position>7</position>
+</Display_DateTime>
+<Display_Variables>
+  <dim_background>TRUE</dim_background>
+  <display_as_annotation>FALSE</display_as_annotation>
+  <display_value_only>TRUE</display_value_only>
+  <font_color>white</font_color>
+  <font_size>Normal (10pt)</font_size>
+  <northwest>BLOB_COUNT
+</northwest>
+</Display_Variables>

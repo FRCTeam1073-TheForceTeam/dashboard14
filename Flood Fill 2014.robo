@@ -1,0 +1,37 @@
+<head><version>2.59.0</version></head>
+<Axis_Internet_Camera>
+  <auto_back_light>TRUE</auto_back_light>
+  <auto_exposure>FALSE</auto_exposure>
+  <auto_white_balance>TRUE</auto_white_balance>
+  <brightness_value>50</brightness_value>
+  <color_level_value>50</color_level_value>
+  <compression_index>5</compression_index>
+  <contrast_value>50</contrast_value>
+  <exposure_value>50</exposure_value>
+  <ip_address>10.10.73.9</ip_address>
+  <is_active>TRUE</is_active>
+  <password>admin</password>
+  <port>80</port>
+  <sharpness_value>50</sharpness_value>
+  <username>root</username>
+</Axis_Internet_Camera>
+<RGB_Filter>
+  <channel>66</channel>
+  <hue_value>50</hue_value>
+  <hysteresis>0</hysteresis>
+  <min_value>100</min_value>
+  <result_type>1</result_type>
+</RGB_Filter>
+<Flood_Fill>
+  <color_tolerance>100</color_tolerance>
+  <fast_flood_fill>FALSE</fast_flood_fill>
+</Flood_Fill>
+<Blob_Separate/>
+<Display_DateTime>
+  <border_color>6</border_color>
+  <custom_format>MM/DD/YYYY HH:MI:SS PM</custom_format>
+  <display_as_annotation>FALSE</display_as_annotation>
+  <font_size>2</font_size>
+  <format>2</format>
+  <position>7</position>
+</Display_DateTime>
