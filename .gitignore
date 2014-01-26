@@ -2,5 +2,5 @@
 /Dashboard14Widgets/build/
 /Dashboard14Widgets/dist/
 CameraExtension/nbproject/private/
-CameraExtension/build/
-CameraExtension/dist/
+CameraExtension/build
+CameraExtension/dist
