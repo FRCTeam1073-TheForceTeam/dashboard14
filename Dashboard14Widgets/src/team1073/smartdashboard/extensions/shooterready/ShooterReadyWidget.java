@@ -1,6 +1,6 @@
 package team1073.smartdashboard.extensions.shooterready;
 
-import edu.wpi.first.smartdashboard.gui.Widget;
+import edu.wpi.first.smartdashboard.gui.StaticWidget;
 import edu.wpi.first.smartdashboard.properties.MultiProperty;
 import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
@@ -9,7 +9,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 
-public class ShooterReadyWidget extends Widget
+public class ShooterReadyWidget extends StaticWidget
 {
     public static final DataType[] TYPES = {DataType.NUMBER };
     public static final String NAME = "Shooter Ready";
@@ -24,7 +24,7 @@ public class ShooterReadyWidget extends Widget
         shooterReady.add("All Systems Nominal", 1);
     }
 
-    @Override
+    //@Override
     public void setValue(Object o) 
     {
         this.value = ((Number) o).intValue();
@@ -59,13 +59,9 @@ public class ShooterReadyWidget extends Widget
         {
             g.setColor(Color.RED);
         }
-        else if (value == -1)
+        else if (value == 0 || value == 1)
         {
-            g.setColor(Color.YELLOW);
-        }
-        else if (value == 0)
-        {
-         g.setColor(Color.ORANGE);
+         g.setColor(Color.YELLOW);
         }
         else if (value == 1)
         {

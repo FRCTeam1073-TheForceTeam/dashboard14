@@ -7,7 +7,7 @@
 package team1073.smartdashbaord.extensions.gearshifter;
 
 
-import edu.wpi.first.smartdashboard.gui.Widget;
+import edu.wpi.first.smartdashboard.gui.StaticWidget;
 import edu.wpi.first.smartdashboard.properties.MultiProperty;
 import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
@@ -16,23 +16,23 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 
-public class GearShifter extends Widget
+public class GearShifter extends StaticWidget
 {
-    public static final DataType[] TYPES = {DataType.NUMBER };
+    public static final DataType[] TYPES = {DataType.BOOLEAN };
     public static final String NAME = "Gear Shifter";
-    private int value = 0;
+    private boolean value = true;
     public final MultiProperty gearStatus = new MultiProperty(this, "Gear Status");
 
     
     public GearShifter(){
         /*This constructor is only necessary for testing purposes*/
-        gearStatus.add("Gear One", 0);
-        gearStatus.add("Gear Two", 1);
+        gearStatus.add("Gear One", true);
+        gearStatus.add("Gear Two", false);
     }
-    @Override
+    //@Override
     public void setValue(Object o) 
     {
-        this.value = ((Number) o).intValue();
+        this.value = ((Boolean) o).booleanValue();
        
         repaint();
 
@@ -60,7 +60,7 @@ public class GearShifter extends Widget
         
         String gear = "";
         
-        if (value == 0)
+        if (value == true)
         {
             gear = "Gear One";
             g.setColor(Color.BLACK);
@@ -69,7 +69,7 @@ public class GearShifter extends Widget
             g.setFont(new Font ("default", Font.BOLD, 32));
             g.drawString(gear, size.width/40, (int) (size.height/1.3));
         }
-        else if (value == 1)
+        else
         {
             gear = "Gear Two";
             g.setColor(Color.BLACK);
