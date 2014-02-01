@@ -20,7 +20,7 @@ public class ShooterReadyWidget extends StaticWidget
         /*This constructor is only necessary for testing purposes*/
         shooterReady.add("Low PSI, No Distance", -2);
         shooterReady.add("Okay PSI, No Distance", 0);
-        shooterReady.add("Low PSI", -1);
+        shooterReady.add("Low PSI, Distance Okay", -1);
         shooterReady.add("All Systems Nominal", 1);
     }
 
@@ -59,7 +59,7 @@ public class ShooterReadyWidget extends StaticWidget
         {
             g.setColor(Color.RED);
         }
-        else if (value == 0 || value == 1)
+        else if (value == 0 || value == -1)
         {
          g.setColor(Color.YELLOW);
         }
