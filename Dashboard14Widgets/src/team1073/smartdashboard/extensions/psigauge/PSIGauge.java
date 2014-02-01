@@ -24,9 +24,9 @@ public class PSIGauge extends StaticWidget
 
     public PSIGauge(){
         /*This constructor is only necessary for testing purposes*/
-        PSI.add("2 Shots", 60.0);
-        PSI.add("1 Shot", 31.0);
-        PSI.add("No Shots", 10.0);
+        PSI.add("2 Shots", 115.0);
+        PSI.add("1 Shot", 45.0);
+        PSI.add("No Shots", 20.0);
 
     }
     
@@ -42,7 +42,7 @@ public class PSIGauge extends StaticWidget
     @Override
     public void init() 
     {
-        setPreferredSize(new Dimension(200, 90));
+        setPreferredSize(new Dimension(200, 150));
     }
 
     @Override
@@ -59,29 +59,29 @@ public class PSIGauge extends StaticWidget
         g.setColor(Color.black);
         g.fillRect(0, 0, size.width, size.height);
                 
-        if (value == 60.0)
+        if (value < 120.0 && value > 80)
         {
             g.setColor(Color.GREEN);
             g.fillRect(0, size.height - (int) (value), size.width,size.height);
             g.setColor(Color.WHITE);
             g.setFont(new Font("Default", Font.BOLD, 22));
-            g.drawString("Two Shots Ready", size.width /17, (int) (size.height/2));
+            g.drawString("Two Shots Ready", size.width /17, (int) (size.height/6));
         }
-        else if (value < 60.0 && value > 30.0)
+        else if (value < 80.0 && value > 30.0)
         {
             g.setColor(Color.YELLOW);
             g.fillRect(0, size.height - (int) (value), size.width,size.height);
             g.setColor(Color.WHITE);
             g.setFont(new Font("Default", Font.BOLD, 22));
-            g.drawString("One Shot Ready", size.width /10, (int) (size.height/2));
+            g.drawString("One Shot Ready", size.width /10, (int) (size.height/6));
         }
         else if (value <= 30.0)
         {
               g.setColor(Color.RED);
               g.fillRect(0, size.height - (int) (value), size.width,size.height);
               g.setColor(Color.WHITE);
-              g.setFont(new Font("Default", Font.BOLD, 32));
-              g.drawString("Not Ready", size.width /10, (int) (size.height/2));
+              g.setFont(new Font("Default", Font.BOLD, 22));
+              g.drawString("Not Ready", size.width/4, (int) (size.height/6));
         }
        
     }
