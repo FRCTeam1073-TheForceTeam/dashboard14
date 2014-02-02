@@ -1,6 +1,6 @@
 package team1073.smartdashboard.extensions.battery;
 
-import edu.wpi.first.smartdashboard.gui.StaticWidget;
+import edu.wpi.first.smartdashboard.gui.Widget;
 import edu.wpi.first.smartdashboard.properties.MultiProperty;
 import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
@@ -9,7 +9,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 
-public class BatteryWidget extends StaticWidget
+public class BatteryWidget extends Widget
 {
     public static final DataType[] TYPES = {DataType.NUMBER };
     public static final String NAME = "Battery";
@@ -25,7 +25,7 @@ public class BatteryWidget extends StaticWidget
         batteryStatus.setDefault("No Data");
     }
 
-    //@Override
+    @Override
     public void setValue(Object o) 
     {
         this.value = ((Number) o).doubleValue();
@@ -58,7 +58,7 @@ public class BatteryWidget extends StaticWidget
         if (value < 8)
             g.setColor(Color.red);
         else if (value < 10)
-            g.setColor(Color.orange);
+            g.setColor(Color.ORANGE);
         else
             g.setColor(Color.green);
         g.fillRect(0, size.height - fillage, size.width, size.height);

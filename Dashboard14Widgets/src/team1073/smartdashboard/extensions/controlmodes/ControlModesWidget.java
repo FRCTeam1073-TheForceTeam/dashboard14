@@ -7,7 +7,7 @@
 package team1073.smartdashboard.extensions.controlmodes;
 
 
-import edu.wpi.first.smartdashboard.gui.StaticWidget;
+import edu.wpi.first.smartdashboard.gui.Widget;
 import edu.wpi.first.smartdashboard.properties.MultiProperty;
 import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
@@ -16,7 +16,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 
-public class ControlModesWidget extends StaticWidget
+public class ControlModesWidget extends Widget
 {
     public static final DataType[] TYPES = {DataType.NUMBER };
     public static final String NAME = "Control Mode";
@@ -30,7 +30,7 @@ public class ControlModesWidget extends StaticWidget
         controlModes.add("Autonomous", 0);
         controlModes.add("TeleOp", 1);
     }
-    //@Override
+    @Override
     public void setValue(Object o) 
     {
         this.value = ((Number) o).intValue();
