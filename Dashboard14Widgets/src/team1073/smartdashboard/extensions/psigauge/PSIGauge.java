@@ -14,6 +14,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.text.DecimalFormat;
 
 public class PSIGauge extends Widget 
 {
@@ -21,10 +22,11 @@ public class PSIGauge extends Widget
     public static final String NAME = "PSI Gauge";
     private double value = 0.0;
     public final MultiProperty PSI = new MultiProperty(this, "PSI");
+    
 
     public PSIGauge(){
         /*This constructor is only necessary for testing purposes*/
-        PSI.add("2 Shots", 115.0);
+        PSI.add("2 Shots", 104.69983673095703);
         PSI.add("1 Shot", 45.0);
         PSI.add("No Shots", 20.0);
 
@@ -34,9 +36,9 @@ public class PSIGauge extends Widget
     public void setValue(Object o) 
     {
         this.value = ((Number) o).doubleValue();
-        
+        DecimalFormat df = new DecimalFormat("#.##");
+        value = Double.valueOf(df.format(value));
         repaint();
-
     }
 
     @Override

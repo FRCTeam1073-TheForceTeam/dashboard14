@@ -1,8 +1,72 @@
 <xml version="1.0">
 <dashboard>
-	<static-widget class="VisionExtension">
-		<location x="0" y="0"/>
+	<widget field="Gear Shifter" type="Boolean" class="team1073.smartdashbaord.extensions.gearshifter.GearShifter">
+		<location x="287" y="133"/>
+		<property name="Gear Status" value="null"/>
+	</widget>
+	<widget field="TimeCounterWidget" type="Number" class="team1073.smartdashboard.extensions.timecounter.TimeCounterWidget">
+		<location x="579" y="5"/>
+		<property name="Time" value="null"/>
+	</widget>
+	<widget field="Battery" type="Number" class="team1073.smartdashboard.extensions.battery.BatteryWidget">
+		<location x="229" y="229"/>
+		<width>232</width>
+		<property name="Battery Status" value="null"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.VideoStreamViewerExtension">
+		<location x="516" y="75"/>
+		<width>256</width>
+		<height>238</height>
+		<property name="Camera IP Address" value="10.10.73.9"/>
 	</static-widget>
+	<widget field="Shooter Ready" type="Number" class="team1073.smartdashboard.extensions.shooterready.ShooterReadyWidget">
+		<location x="457" y="309"/>
+		<property name="Pneumatics Status" value="null"/>
+	</widget>
+	<widget field="PSI Gauge" type="Number" class="team1073.smartdashboard.extensions.psigauge.PSIGauge">
+		<location x="878" y="54"/>
+		<width>350</width>
+		<property name="PSI" value="null"/>
+	</widget>
+	<widget field="WaitForHotGoal" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="223" y="34"/>
+	</widget>
+	<widget field="ToggleNormalCubicJoystickMode" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="223" y="0"/>
+	</widget>
+	<widget field="ToggleDriveOrientation" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="406"/>
+	</widget>
+	<widget field="SwitchGear" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="351"/>
+	</widget>
+	<widget field="Slider 1" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="330"/>
+	</widget>
+	<widget field="Launch Ball" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="254"/>
+	</widget>
+	<widget field="ElevateCollector" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="199"/>
+	</widget>
+	<widget field="Collect" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="165"/>
+	</widget>
+	<widget field="Checkbox 2" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="144"/>
+	</widget>
+	<widget field="Checkbox 1" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="123"/>
+	</widget>
+	<widget field="AutonomousLaunchCommand" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="68"/>
+	</widget>
+	<widget field="AutonomousDriveCommand" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="34"/>
+	</widget>
+	<widget field="AutonomousCommmandGroup" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="0"/>
+	</widget>
 </dashboard>
 <live-window>
 </live-window>
