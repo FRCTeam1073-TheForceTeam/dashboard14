@@ -24,9 +24,7 @@ public class BatteryWidget extends StaticWidget
     public BatteryWidget(){
         /*This constructor is only necessary for testing purposes*/
         batteryStatus.add("Battery Low", 5);
-        batteryStatus.add("Battery Ready", 12);
-        batteryStatus.add("Low Battery", 5);
-        batteryStatus.add("Battery Ready", 11.51498031616211);
+        batteryStatus.add("Battery Ready", 11.5754);
         batteryStatus.add("Battery Relatively Low", 9);
         batteryStatus.setDefault("No Data");
     }
@@ -35,7 +33,7 @@ public class BatteryWidget extends StaticWidget
     public void setValue(Object o) 
     {
         this.value = ((Number) o).doubleValue();
-        DecimalFormat df = new DecimalFormat("#.##");
+        DecimalFormat df = new DecimalFormat("#.#");
         value = Double.valueOf(df.format(value));
         repaint();
 

@@ -88,9 +88,10 @@ public class ShooterReadyWidget extends StaticWidget
         GradientPaint gp = new GradientPaint(0, 0, c1, size.width/2, 0, c2);
         
         //g.fillRect(0, 0, size.width, size.height);
-        g2.setPaint(gp);
+        g2.setPaint(Color.BLACK);
         g2.fill(new Rectangle2D.Double(0, 0, size.width, size.height));
-        g2.fill(new Rectangle2D.Double(0,0, size.width-1, size.height-1));
+        g2.setPaint(gp);
+        g2.fill(new Rectangle2D.Double(1,1, size.width-2, size.height-2));
         
         //Moved this here to allow for more streamlined GUI
         //jTextField1 = new javax.swing.JTextField();
