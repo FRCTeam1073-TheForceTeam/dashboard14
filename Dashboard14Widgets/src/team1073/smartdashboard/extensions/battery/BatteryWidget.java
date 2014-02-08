@@ -8,14 +8,11 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
-<<<<<<< HEAD
 import java.awt.GradientPaint;
 import java.awt.Graphics2D;
-import java.awt.geom.Rectangle2D;
 import java.awt.geom.RoundRectangle2D;
-=======
 import java.text.DecimalFormat;
->>>>>>> 1062a19c94400ad5a2ee9189cbbdfb0a430897ae
+
 
 public class BatteryWidget extends StaticWidget
 {
@@ -27,13 +24,10 @@ public class BatteryWidget extends StaticWidget
     
     public BatteryWidget(){
         /*This constructor is only necessary for testing purposes*/
-<<<<<<< HEAD
         batteryStatus.add("Battery Low", 5);
         batteryStatus.add("Battery Ready", 12);
-=======
         batteryStatus.add("Low Battery", 5);
         batteryStatus.add("Battery Ready", 11.51498031616211);
->>>>>>> 1062a19c94400ad5a2ee9189cbbdfb0a430897ae
         batteryStatus.add("Battery Relatively Low", 9);
         batteryStatus.setDefault("No Data");
     }
