@@ -14,6 +14,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.text.DecimalFormat;
 
 public class PSIGauge extends Widget 
 {
@@ -21,10 +22,11 @@ public class PSIGauge extends Widget
     public static final String NAME = "PSI Gauge";
     private double value = 0.0;
     public final MultiProperty PSI = new MultiProperty(this, "PSI");
+    
 
     public PSIGauge(){
         /*This constructor is only necessary for testing purposes*/
-        PSI.add("2 Shots", 115.0);
+        PSI.add("2 Shots", 104.69983673095703);
         PSI.add("1 Shot", 45.0);
         PSI.add("No Shots", 20.0);
 
@@ -34,9 +36,9 @@ public class PSIGauge extends Widget
     public void setValue(Object o) 
     {
         this.value = ((Number) o).doubleValue();
-        
+        DecimalFormat df = new DecimalFormat("#.##");
+        value = Double.valueOf(df.format(value));
         repaint();
-
     }
 
     @Override
@@ -56,16 +58,19 @@ public class PSIGauge extends Widget
     {
         Dimension size = getSize();
         //background
+        String pressure = "" + value;
         g.setColor(Color.black);
         g.fillRect(0, 0, size.width, size.height);
                 
-        if (value < 120.0 && value > 80)
+        if (value < 120.0 && value >= 80)
         {
             g.setColor(Color.GREEN);
             g.fillRect(0, size.height - (int) (value), size.width,size.height);
             g.setColor(Color.WHITE);
             g.setFont(new Font("Default", Font.BOLD, 22));
             g.drawString("Two Shots Ready", size.width /17, (int) (size.height/6));
+            g.setFont(new Font("Default", Font.BOLD, 22));
+            g.drawString(pressure, (int) (size.width/2.7), (int) (size.height/2.8));
         }
         else if (value < 80.0 && value > 30.0)
         {
@@ -74,6 +79,9 @@ public class PSIGauge extends Widget
             g.setColor(Color.WHITE);
             g.setFont(new Font("Default", Font.BOLD, 22));
             g.drawString("One Shot Ready", size.width /10, (int) (size.height/6));
+            g.setColor(Color.WHITE);
+            g.setFont(new Font("Default", Font.BOLD, 22));
+            g.drawString(pressure, (int) (size.width/2.5), size.height/3);
         }
         else if (value <= 30.0)
         {
@@ -82,7 +90,9 @@ public class PSIGauge extends Widget
               g.setColor(Color.WHITE);
               g.setFont(new Font("Default", Font.BOLD, 22));
               g.drawString("Not Ready", size.width/4, (int) (size.height/6));
-        }
-       
+              g.setColor(Color.WHITE);
+              g.setFont(new Font("Default", Font.BOLD, 22));
+              g.drawString(pressure, (int) (size.width/2.5), size.height/3);
+        }   
     }
 }

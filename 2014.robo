@@ -1,4 +1,4 @@
-<head><version>2.59.0</version></head>
+<head><version>2.59.10</version></head>
 <Axis_Internet_Camera>
   <auto_back_light>TRUE</auto_back_light>
   <auto_exposure>FALSE</auto_exposure>
@@ -13,7 +13,6 @@
   <is_active>TRUE</is_active>
   <password>admin</password>
   <port>80</port>
-  <resolution>3</resolution>
   <sharpness_value>50</sharpness_value>
   <username>root</username>
 </Axis_Internet_Camera>
@@ -28,23 +27,29 @@
   <crop_image>FALSE</crop_image>
   <scale>1000.0</scale>
 </Radial_Distortion>
-<Color_Filter>
+<Marker>
+  <include_graphics>0</include_graphics>
+  <name>flat</name>
+  <revert_to>Current</revert_to>
+</Marker>
+<Color_Filter disabled>
+  <pipe_color>16777215</pipe_color>
   <adjust_lighting>FALSE</adjust_lighting>
-  <colors>#3EDFBE
-
-#D7E809
+  <colors>#D7E809
 
 </colors>
   <color_bias>1.0</color_bias>
   <match_distance>80</match_distance>
   <min_color>100</min_color>
   <min_intensity>100</min_intensity>
+  <result_type>1</result_type>
 </Color_Filter>
-<RGB_Filter disabled>
-  <channel>66</channel>
+<RGB_Filter>
+  <channel>2</channel>
   <hue_value>50</hue_value>
   <hysteresis>0</hysteresis>
   <min_value>100</min_value>
+  <result_type>1</result_type>
 </RGB_Filter>
 <Write_Images disabled>
   <filename>C:\MatchImages2014\image.jpeg</filename>
@@ -72,14 +77,44 @@
   <real_time>1</real_time>
 </Write_AVI>
 <Convex_Hull/>
+<Blob_Filter>
+  <create_blob_array_variable>FALSE</create_blob_array_variable>
+  <filters>
+    <tab>
+      <filter>
+        <count_threshold>3</count_threshold>
+        <create_array>1</create_array>
+        <filter_id>40</filter_id>
+        <invert_count>0</invert_count>
+        <invert_threshold>0</invert_threshold>
+        <weight_threshold>0</weight_threshold>
+      </filter>
+    </tab>
+    <tab:2/>
+    <tab:3/>
+    <tab:4/>
+    <tab:5/>
+    <tab:6/>
+  </filters>
+  <largest_is_background>FALSE</largest_is_background>
+  <show_weights>FALSE</show_weights>
+  <sort_array_on_x>FALSE</sort_array_on_x>
+  <sort_array_on_y>FALSE</sort_array_on_y>
+</Blob_Filter>
 <Blob_Replace>
-  <color_index>6</color_index>
+  <color_index>5</color_index>
   <fill_shape>TRUE</fill_shape>
-  <order_array_on_x>FALSE</order_array_on_x>
-  <order_array_on_y>FALSE</order_array_on_y>
+  <order_array_on_x>TRUE</order_array_on_x>
+  <order_array_on_y>TRUE</order_array_on_y>
+  <shape_index>12</shape_index>
   <thickness>1</thickness>
 </Blob_Replace>
 <Blob_Count/>
+<Mask>
+  <image1>flat</image1>
+  <image2>Current</image2>
+  <mask>Current</mask>
+</Mask>
 <Display_DateTime>
   <custom_format>MM/DD/YYYY HH:MI:SS PM</custom_format>
   <display_as_annotation>FALSE</display_as_annotation>
@@ -96,3 +131,35 @@
   <northwest>BLOB_COUNT
 </northwest>
 </Display_Variables>
+<function>
+<function_name>Tab2</function_name>
+<function_always_run>0</function_always_run>
+<Axis_Internet_Camera>
+  <auto_back_light>TRUE</auto_back_light>
+  <auto_exposure>FALSE</auto_exposure>
+  <auto_white_balance>TRUE</auto_white_balance>
+  <brightness_value>50</brightness_value>
+  <camera_type>1</camera_type>
+  <color_level_value>50</color_level_value>
+  <compression_index>5</compression_index>
+  <contrast_value>50</contrast_value>
+  <exposure_value>50</exposure_value>
+  <ip_address>10.10.73.9</ip_address>
+  <is_active>FALSE</is_active>
+  <password>admin</password>
+  <port>80</port>
+  <sharpness_value>50</sharpness_value>
+  <username>root</username>
+</Axis_Internet_Camera>
+<Radial_Distortion>
+  <center_x>0.5</center_x>
+  <center_y>0.5</center_y>
+  <coeff_a>-1121</coeff_a>
+  <coeff_b>.525</coeff_b>
+  <coeff_c>0.0</coeff_c>
+  <coeff_d>0.0</coeff_d>
+  <coeff_e>0.0</coeff_e>
+  <crop_image>FALSE</crop_image>
+  <scale>1000.0</scale>
+</Radial_Distortion>
+</function>

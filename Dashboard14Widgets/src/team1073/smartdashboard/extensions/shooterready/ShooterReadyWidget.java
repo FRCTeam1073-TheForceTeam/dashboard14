@@ -1,15 +1,18 @@
 package team1073.smartdashboard.extensions.shooterready;
 
-import edu.wpi.first.smartdashboard.gui.Widget;
+import edu.wpi.first.smartdashboard.gui.StaticWidget;
 import edu.wpi.first.smartdashboard.properties.MultiProperty;
 import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GradientPaint;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Rectangle2D;
 
-public class ShooterReadyWidget extends Widget
+public class ShooterReadyWidget extends StaticWidget
 {
     public static final DataType[] TYPES = {DataType.NUMBER };
     public static final String NAME = "Shooter Ready";
@@ -24,7 +27,7 @@ public class ShooterReadyWidget extends Widget
         shooterReady.add("All Systems Nominal", 1);
     }
 
-    @Override
+    //@Override
     public void setValue(Object o) 
     {
         this.value = ((Number) o).intValue();
@@ -49,25 +52,45 @@ public class ShooterReadyWidget extends Widget
     @Override
     protected void paintComponent(Graphics g)
     {
+        Graphics2D g2 = (Graphics2D)g;
         Dimension size = getSize();
         //background
         g.setColor(Color.black);
-        g.fillRect(0, 0, size.width, size.height);
+        //g.fillRect(0, 0, size.width, size.height);
+        Color c1;
+        Color c2;
         
         
         if (value == -2)
         {
-            g.setColor(Color.RED);
+            //g.setColor(Color.RED);
+            c2 = new Color(255, 0, 0);
+            c1 = new Color(205, 0, 0);
         }
         else if (value == 0 || value == -1)
         {
-         g.setColor(Color.YELLOW);
+         //g.setColor(Color.YELLOW);
+            c2 = new Color(255, 215, 0);
+            c1 = new Color(255, 255, 0);
         }
         else if (value == 1)
         {
-            g.setColor(Color.GREEN);
+            //g.setColor(Color.GREEN);
+            c2 = new Color(0, 255, 0);
+            c1 = new Color(0, 195, 0);
         }
-        g.fillRect(0, 0, size.width, size.height);
+        else
+        {
+            c2 = new Color(0, 0, 0);
+            c1 = new Color(0, 0, 0);
+        }
+        
+        GradientPaint gp = new GradientPaint(0, 0, c1, size.width/2, 0, c2);
+        
+        //g.fillRect(0, 0, size.width, size.height);
+        g2.setPaint(gp);
+        g2.fill(new Rectangle2D.Double(0, 0, size.width, size.height));
+        g2.fill(new Rectangle2D.Double(0,0, size.width-1, size.height-1));
         
         //Moved this here to allow for more streamlined GUI
         //jTextField1 = new javax.swing.JTextField();

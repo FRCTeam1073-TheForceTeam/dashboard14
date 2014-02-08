@@ -41,11 +41,12 @@ public class VisionThread extends SwingWorker<Boolean, String>{
         }
         return true;
     }
-    
+    String coordinates;
     private void getRRVars()
     {
         try {
             int blobCount = Integer.parseInt(roboRealm.getVariable("BLOB_COUNT"));
+            coordinates = (roboRealm.getVariable("BLOB_COUNT"));
             if (blobCount > 2)//needs work
             {
                 HOT = true;

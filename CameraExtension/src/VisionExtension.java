@@ -27,7 +27,7 @@ public class VisionExtension extends StaticWidget{
     boolean HOT = false;
     NetworkTable table;
     int counter = 0;
-
+    public static final String NAME = "VisionExtension";
     
     public VisionExtension()
     {

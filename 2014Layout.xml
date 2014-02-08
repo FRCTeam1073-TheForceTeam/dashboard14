@@ -1,7 +1,13 @@
 <xml version="1.0">
 <dashboard>
 	<static-widget class="VisionExtension">
+		<location x="0" y="503"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.VideoStreamViewerExtension">
 		<location x="0" y="0"/>
+		<width>766</width>
+		<height>502</height>
+		<property name="Camera IP Address" value="10.10.73.9"/>
 	</static-widget>
 </dashboard>
 <live-window>
