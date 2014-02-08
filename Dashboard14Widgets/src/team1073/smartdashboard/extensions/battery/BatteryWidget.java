@@ -1,6 +1,6 @@
 package team1073.smartdashboard.extensions.battery;
 
-import edu.wpi.first.smartdashboard.gui.StaticWidget;
+import edu.wpi.first.smartdashboard.gui.Widget;
 import edu.wpi.first.smartdashboard.properties.MultiProperty;
 import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
@@ -13,7 +13,7 @@ import java.awt.Graphics2D;
 import java.awt.geom.RoundRectangle2D;
 import java.text.DecimalFormat;
 
-public class BatteryWidget extends StaticWidget
+public class BatteryWidget extends Widget
 {
     public static final DataType[] TYPES = {DataType.NUMBER };
     public static final String NAME = "Battery";
@@ -29,7 +29,7 @@ public class BatteryWidget extends StaticWidget
         batteryStatus.setDefault("No Data");
     }
 
-    //@Override
+    @Override
     public void setValue(Object o) 
     {
         this.value = ((Number) o).doubleValue();

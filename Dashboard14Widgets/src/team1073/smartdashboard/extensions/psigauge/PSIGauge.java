@@ -6,7 +6,7 @@
 
 package team1073.smartdashboard.extensions.psigauge;
 
-import edu.wpi.first.smartdashboard.gui.Widget;
+import edu.wpi.first.smartdashboard.gui.StaticWidget;
 import edu.wpi.first.smartdashboard.properties.MultiProperty;
 import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
@@ -14,9 +14,12 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.Arc2D;
+import java.awt.geom.Line2D;
 import java.text.DecimalFormat;
 
-public class PSIGauge extends Widget 
+public class PSIGauge extends StaticWidget 
 {
     public static final DataType[] TYPES = {DataType.NUMBER };
     public static final String NAME = "PSI Gauge";
@@ -32,7 +35,7 @@ public class PSIGauge extends Widget
 
     }
     
-    @Override
+    //@Override
     public void setValue(Object o) 
     {
         this.value = ((Number) o).doubleValue();
@@ -56,13 +59,21 @@ public class PSIGauge extends Widget
     @Override
     protected void paintComponent(Graphics g)
     {
+        Graphics2D g2 = (Graphics2D)g;
         Dimension size = getSize();
         //background
         String pressure = "" + value;
-        g.setColor(Color.black);
-        g.fillRect(0, 0, size.width, size.height);
+        //g.setColor(Color.black);
+        //g.fillRect(0, 0, size.width, size.height);
+        g2.setPaint(Color.white);
+        g2.fill(new Arc2D.Double(0, 0, size.width, size.height, 0, 180, Arc2D.CHORD));
+        g2.setPaint(Color.black);
+        g2.draw(new Arc2D.Double(0, 0, size.width, size.height, 0, 180, Arc2D.CHORD));
+        g2.setPaint(Color.RED);
+        g2.draw(new Line2D.Double(size.width/2, size.height, 50, 50));
+        
                 
-        if (value < 120.0 && value >= 80)
+        /*if (value < 120.0 && value >= 80)
         {
             g.setColor(Color.GREEN);
             g.fillRect(0, size.height - (int) (value), size.width,size.height);
@@ -93,6 +104,6 @@ public class PSIGauge extends Widget
               g.setColor(Color.WHITE);
               g.setFont(new Font("Default", Font.BOLD, 22));
               g.drawString(pressure, (int) (size.width/2.5), size.height/3);
-        }   
+        }*/   
     }
 }
