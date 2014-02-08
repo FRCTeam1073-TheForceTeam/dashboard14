@@ -6,7 +6,7 @@
 
 package team1073.smartdashboard.extensions.psigauge;
 
-import edu.wpi.first.smartdashboard.gui.StaticWidget;
+import edu.wpi.first.smartdashboard.gui.Widget;
 import edu.wpi.first.smartdashboard.properties.MultiProperty;
 import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
@@ -19,7 +19,7 @@ import java.awt.geom.Arc2D;
 import java.awt.geom.Line2D;
 import java.text.DecimalFormat;
 
-public class PSIGauge extends StaticWidget 
+public class PSIGauge extends Widget 
 {
     public static final DataType[] TYPES = {DataType.NUMBER };
     public static final String NAME = "PSI Gauge";
@@ -35,7 +35,7 @@ public class PSIGauge extends StaticWidget
 
     }
     
-    //@Override
+    @Override
     public void setValue(Object o) 
     {
         this.value = ((Number) o).doubleValue();
