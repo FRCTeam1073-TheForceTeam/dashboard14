@@ -69,6 +69,7 @@ public class VisionExtension extends StaticWidget{
         g.setColor(Color.red);
         g.fillRect(0, 0, size.width, size.height);
         g.setColor(Color.BLACK);
+//        g.drawString("HOT:" + HOT, size.width/2, size.height/2);
         g.drawString("HOT:" + HOT, size.width/2, size.height/2);
     }
     
