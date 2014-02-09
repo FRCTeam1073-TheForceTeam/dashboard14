@@ -54,7 +54,7 @@ public class VisionThread extends SwingWorker<Boolean, String>{
 //            }
 //            else if (blobCount.equals(null))
 //                HOT = false;//not.
-            HOT = (Integer.parseInt(blobCount))>0;;
+            HOT = (Integer.parseInt(blobCount))>0;
             
         }
         catch (Exception e)
