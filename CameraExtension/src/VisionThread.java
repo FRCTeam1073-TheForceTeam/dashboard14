@@ -28,16 +28,18 @@ public class VisionThread extends SwingWorker<Boolean, String>{
     
     @Override
     protected Boolean doInBackground() throws Exception {
+    
         while (!isDone() && !isCancelled()) {
-            //wait(100);
+            if (!roboRealm.connected)
+            {
+                roboRealm.connect("localhost");
+            }
 
             getRRVars();
             counter++;
             //visionTable.putBoolean("HOT" +counter, HOT);
             firePropertyChange("HOT", HOT_OLD, HOT);
             HOT_OLD = HOT;
-            /*publish("Complete");
-            setProgress(100);*/
         }
         return true;
     }
