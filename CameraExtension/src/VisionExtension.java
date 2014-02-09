@@ -19,11 +19,12 @@ import java.beans.PropertyChangeListener;
  */
 public class VisionExtension extends StaticWidget{
     
-    VisionThread worker;
-    boolean HOT = false;
-    NetworkTable table;
-    int counter = 0;
     public static final String NAME = "VisionExtension";
+    VisionThread worker;
+    NetworkTable table;
+    boolean HOT = false;
+    boolean connected = false;
+
     
     public VisionExtension()
     {
@@ -45,7 +46,11 @@ public class VisionExtension extends StaticWidget{
                     if ("HOT".equals(evt.getPropertyName())) {
                         HOT = (boolean) evt.getNewValue();
                         table.putBoolean("Hot", HOT);
-
+                        repaint();
+                    }
+                    else if (evt.getPropertyName().equals("connected"))
+                    {
+                        connected = (boolean) evt.getNewValue();
                         repaint();
                     }
                 }
@@ -62,10 +67,12 @@ public class VisionExtension extends StaticWidget{
     protected void paintComponent(Graphics g)
     {
         Dimension size = getSize();
-        g.setColor(Color.red);
+        if (!connected)
+            g.setColor(Color.red);
+        else
+            g.setColor(Color.green);
         g.fillRect(0, 0, size.width, size.height);
         g.setColor(Color.BLACK);
-//        g.drawString("HOT:" + HOT, size.width/2, size.height/2);
         g.drawString("HOT:" + HOT, size.width/2, size.height/2);
     }
     

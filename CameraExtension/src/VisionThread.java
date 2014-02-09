@@ -17,6 +17,7 @@ public class VisionThread extends SwingWorker<Boolean, String>{
     RR_API roboRealm;
     private boolean HOT;
     private boolean HOT_OLD;
+    private boolean old_connected;
     int counter;
     public VisionThread()
     {
@@ -32,7 +33,13 @@ public class VisionThread extends SwingWorker<Boolean, String>{
         while (!isDone() && !isCancelled()) {
             if (!roboRealm.connected)
             {
+                firePropertyChange("connected", old_connected, false);
+                old_connected = false;
                 roboRealm.connect("localhost");
+            }
+            else{
+                firePropertyChange("connected", old_connected, true);
+                old_connected = true;
             }
 
             getRRVars();
