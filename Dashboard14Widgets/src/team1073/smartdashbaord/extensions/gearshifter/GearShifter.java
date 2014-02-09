@@ -62,7 +62,7 @@ public class GearShifter extends Widget
         
         if (value == true)
         {
-            gear = "Gear One";
+            gear = "Low Gear";
             g.setColor(Color.BLACK);
             g.fillRect(0, 0, size.width, size.height);
             g.setColor(Color.GREEN);
@@ -71,7 +71,7 @@ public class GearShifter extends Widget
         }
         else
         {
-            gear = "Gear Two";
+            gear = "High Gear";
             g.setColor(Color.BLACK);
             g.fillRect(0, 0, size.width, size.height);
             g.setColor(Color.GREEN);

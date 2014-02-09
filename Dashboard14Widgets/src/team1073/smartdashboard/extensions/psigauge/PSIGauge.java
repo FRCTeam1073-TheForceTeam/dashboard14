@@ -63,17 +63,17 @@ public class PSIGauge extends Widget
         Dimension size = getSize();
         //background
         String pressure = "" + value;
-        //g.setColor(Color.black);
-        //g.fillRect(0, 0, size.width, size.height);
-        g2.setPaint(Color.white);
+        g.setColor(Color.black);
+        g.fillRect(0, 0, size.width, size.height);
+       /* g2.setPaint(Color.white);
         g2.fill(new Arc2D.Double(0, 0, size.width, size.height, 0, 180, Arc2D.CHORD));
         g2.setPaint(Color.black);
         g2.draw(new Arc2D.Double(0, 0, size.width, size.height, 0, 180, Arc2D.CHORD));
         g2.setPaint(Color.RED);
-        g2.draw(new Line2D.Double(size.width/2, size.height, 50, 50));
+        g2.draw(new Line2D.Double(size.width/2, size.height, 50, 50)); */
         
                 
-        /*if (value < 120.0 && value >= 80)
+        if (value < 120.0 && value >= 80)
         {
             g.setColor(Color.GREEN);
             g.fillRect(0, size.height - (int) (value), size.width,size.height);
@@ -104,6 +104,6 @@ public class PSIGauge extends Widget
               g.setColor(Color.WHITE);
               g.setFont(new Font("Default", Font.BOLD, 22));
               g.drawString(pressure, (int) (size.width/2.5), size.height/3);
-        }*/   
+        }   
     }
 }
