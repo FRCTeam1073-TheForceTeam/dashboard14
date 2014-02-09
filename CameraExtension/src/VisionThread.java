@@ -17,6 +17,7 @@ public class VisionThread extends SwingWorker<Boolean, String>{
     RR_API roboRealm;
     private boolean HOT;
     private boolean HOT_OLD;
+    private boolean old_connected;
     int counter;
     public VisionThread()
     {
@@ -28,34 +29,44 @@ public class VisionThread extends SwingWorker<Boolean, String>{
     
     @Override
     protected Boolean doInBackground() throws Exception {
+    
         while (!isDone() && !isCancelled()) {
-            //wait(100);
+            if (!roboRealm.connected)
+            {
+                firePropertyChange("connected", old_connected, false);
+                old_connected = false;
+                roboRealm.connect("localhost");
+            }
+            else{
+                firePropertyChange("connected", old_connected, true);
+                old_connected = true;
+            }
 
             getRRVars();
             counter++;
             //visionTable.putBoolean("HOT" +counter, HOT);
             firePropertyChange("HOT", HOT_OLD, HOT);
             HOT_OLD = HOT;
-            /*publish("Complete");
-            setProgress(100);*/
         }
         return true;
     }
-    String coordinates;
+
     private void getRRVars()
     {
         try {
-            int blobCount = Integer.parseInt(roboRealm.getVariable("BLOB_COUNT"));
-            coordinates = (roboRealm.getVariable("BLOB_COUNT"));
-            if (blobCount > 2)//needs work
-            {
-                HOT = true;
-            }
-            else
-                HOT = false;//not
+            String blobCount = (roboRealm.getVariable("BLOB_COUNT"));
+//            if (blobCount.equals("1") )//needs work
+//            {
+//                HOT = true;
+//            }
+//            else if (blobCount.equals(null))
+//                HOT = false;//not.
+            HOT = (Integer.parseInt(blobCount))>0;
+            
         }
         catch (Exception e)
         {
+            HOT = false;
             System.out.println(e);
             e.printStackTrace();
         }

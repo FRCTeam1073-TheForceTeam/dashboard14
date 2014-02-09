@@ -6,7 +6,7 @@
 
 package team1073.smartdashboard.extensions.psigauge;
 
-import edu.wpi.first.smartdashboard.gui.StaticWidget;
+import edu.wpi.first.smartdashboard.gui.Widget;
 import edu.wpi.first.smartdashboard.properties.MultiProperty;
 import edu.wpi.first.smartdashboard.properties.Property;
 import edu.wpi.first.smartdashboard.types.DataType;
@@ -22,7 +22,7 @@ import java.awt.RadialGradientPaint;
 import java.awt.geom.Point2D;
 import java.text.DecimalFormat;
 
-public class PSIGauge extends StaticWidget 
+public class PSIGauge extends Widget 
 {
     public static final DataType[] TYPES = {DataType.NUMBER };
     public static final String NAME = "PSI Gauge";
@@ -42,7 +42,7 @@ public class PSIGauge extends StaticWidget
     }
 
     
-    //@Override
+    @Override
     public void setValue(Object o) 
     {
         this.value = ((Number) o).doubleValue();
@@ -128,9 +128,11 @@ public class PSIGauge extends StaticWidget
         g2.draw(new Line2D.Double(size.width/2, size.height, Endx, Endy));
         
         
+        g.setColor(Color.black);
+        g.fillRect(0, 0, size.width, size.height);
         
                 
-        /*if (value < 120.0 && value >= 80)
+        if (value < 120.0 && value >= 80)
         {
             g.setColor(Color.GREEN);
             g.fillRect(0, size.height - (int) (value), size.width,size.height);
@@ -161,6 +163,6 @@ public class PSIGauge extends StaticWidget
               g.setColor(Color.WHITE);
               g.setFont(new Font("Default", Font.BOLD, 22));
               g.drawString(pressure, (int) (size.width/2.5), size.height/3);
-        }*/   
+        }   
     }
 }
