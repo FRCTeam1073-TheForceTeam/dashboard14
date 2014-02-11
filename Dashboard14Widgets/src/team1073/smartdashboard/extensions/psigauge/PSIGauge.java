@@ -112,7 +112,7 @@ public class PSIGauge extends Widget
         final double End150X = radii - (Math.cos(Math.toRadians(150)))*(radii-10);
         final double End150Y = (size.height) - (Math.sin(Math.toRadians(150)))*(radii-10);
         
-        g2.setPaint(Color.DARK_GRAY);
+        g2.setPaint(Color.BLACK);
         g2.draw(new Line2D.Double(size.width/2, 1, size.width/2, 20));
         g2.draw(new Line2D.Double(Start30X, Start30Y, End30X, End30Y));
         g2.draw(new Line2D.Double(Start60X, Start60Y, End60X, End60Y));
@@ -122,47 +122,22 @@ public class PSIGauge extends Widget
         g2.setPaint(Color.WHITE);
         String PSI = value + "PSI";
         g.setFont(new Font ("default", Font.BOLD, 32));
-        g.drawString(PSI, (int) (size.width/2.7), size.height/2);
         
-        g2.setPaint(Color.DARK_GRAY);
+        
+        
+        if(value < 99.9999999999999999999999999999999999)
+        {
+            g.drawString(PSI, (int) (size.width/2.7), (int)(size.height/1.3));
+        }
+        else
+        {
+            g.drawString(PSI, (int) (size.width/2.9), (int)(size.height/1.3));
+        }
+        
+        g2.setPaint(Color.WHITE);
         g2.draw(new Line2D.Double(size.width/2, size.height, Endx, Endy));
         
         
-        g.setColor(Color.black);
-        g.fillRect(0, 0, size.width, size.height);
-        
-                
-        if (value < 120.0 && value >= 80)
-        {
-            g.setColor(Color.GREEN);
-            g.fillRect(0, size.height - (int) (value), size.width,size.height);
-            g.setColor(Color.WHITE);
-            g.setFont(new Font("Default", Font.BOLD, 22));
-            g.drawString("Two Shots Ready", size.width /17, (int) (size.height/6));
-            g.setFont(new Font("Default", Font.BOLD, 22));
-            g.drawString(pressure, (int) (size.width/2.7), (int) (size.height/2.8));
-        }
-        else if (value < 80.0 && value > 30.0)
-        {
-            g.setColor(Color.YELLOW);
-            g.fillRect(0, size.height - (int) (value), size.width,size.height);
-            g.setColor(Color.WHITE);
-            g.setFont(new Font("Default", Font.BOLD, 22));
-            g.drawString("One Shot Ready", size.width /10, (int) (size.height/6));
-            g.setColor(Color.WHITE);
-            g.setFont(new Font("Default", Font.BOLD, 22));
-            g.drawString(pressure, (int) (size.width/2.5), size.height/3);
-        }
-        else if (value <= 30.0)
-        {
-              g.setColor(Color.RED);
-              g.fillRect(0, size.height - (int) (value), size.width,size.height);
-              g.setColor(Color.WHITE);
-              g.setFont(new Font("Default", Font.BOLD, 22));
-              g.drawString("Not Ready", size.width/4, (int) (size.height/6));
-              g.setColor(Color.WHITE);
-              g.setFont(new Font("Default", Font.BOLD, 22));
-              g.drawString(pressure, (int) (size.width/2.5), size.height/3);
-        }   
+       
     }
 }
