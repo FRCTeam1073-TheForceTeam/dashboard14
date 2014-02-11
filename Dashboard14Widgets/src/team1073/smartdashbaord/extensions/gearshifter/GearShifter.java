@@ -14,7 +14,10 @@ import edu.wpi.first.smartdashboard.types.DataType;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GradientPaint;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.RoundRectangle2D;
 
 public class GearShifter extends Widget
 {
@@ -53,31 +56,35 @@ public class GearShifter extends Widget
     @Override
     protected void paintComponent(Graphics g)
     {
+        Graphics2D g2 = (Graphics2D)g;
         Dimension size = getSize();
         //background
-        g.setColor(Color.black);
-        g.fillRect(0, 0, size.width, size.height);
+        Color c1 = new Color(0, 0, 0);
+        Color c2 = new Color(49, 79, 79);
+        
+        GradientPaint gp = new GradientPaint(0, 0, c1, size.width/2, 0, c2);
+        g2.setPaint(gp);
+        g2.fill(new RoundRectangle2D.Double(0, 0, size.width-1, size.height-1, 10, 10));
+        
+        
         
         String gear = "";
         
         if (value == true)
         {
             gear = "Low Gear";
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 0, size.width, size.height);
-            g.setColor(Color.GREEN);
-            g.setFont(new Font ("default", Font.BOLD, 32));
-            g.drawString(gear, size.width/40, (int) (size.height/1.3));
+            g.setColor(Color.WHITE);
+            g.setFont(new Font ("default", Font.BOLD, 30));
+            g.drawString(gear, size.width/40-2, (int) (size.height/1.3));
         }
         else
         {
             gear = "High Gear";
-            g.setColor(Color.BLACK);
-            g.fillRect(0, 0, size.width, size.height);
-            g.setColor(Color.GREEN);
-            g.setFont(new Font ("default", Font.BOLD, 32));
-            g.drawString(gear, size.width/40, (int) (size.height/1.3));
+            g.setColor(Color.WHITE);
+            g.setFont(new Font ("default", Font.BOLD, 30));
+            g.drawString(gear, size.width/40-2, (int) (size.height/1.3));
         }
+        
         
     }
     
