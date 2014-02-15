@@ -1,13 +1,112 @@
 <xml version="1.0">
 <dashboard>
-	<static-widget class="VisionExtension">
-		<location x="0" y="503"/>
-	</static-widget>
 	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.VideoStreamViewerExtension">
 		<location x="0" y="0"/>
-		<width>766</width>
-		<height>502</height>
-		<property name="Camera IP Address" value="10.10.73.9"/>
+		<width>662</width>
+		<height>500</height>
+		<property name="Camera IP Address" value="127.0.0.1"/>
+	</static-widget>
+	<widget field="WaitForHotGoal" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="978" y="225"/>
+	</widget>
+	<widget field="ToggleForwardDirection" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="978" y="191"/>
+	</widget>
+	<widget field="ToggleElevatorPID" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="978" y="157"/>
+	</widget>
+	<widget field="ToggleDriveOrientation" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="978" y="123"/>
+	</widget>
+	<widget field="TimeCounterWidget" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="978" y="102"/>
+	</widget>
+	<widget field="TestNextRobotStatus" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="978" y="68"/>
+	</widget>
+	<widget field="TalonCalibratePositive" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="987" y="34"/>
+	</widget>
+	<widget field="TalonCalibrateNegative" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="978" y="0"/>
+	</widget>
+	<widget field="Shooter Ready" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="767" y="631"/>
+	</widget>
+	<widget field="Shooter Data" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="767" y="610"/>
+	</widget>
+	<widget field="ShiftLowGear" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="767" y="576"/>
+	</widget>
+	<widget field="ShiftHighGear" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="767" y="542"/>
+	</widget>
+	<widget field="PSI Gauge" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="767" y="521"/>
+	</widget>
+	<widget field="Min Elevation" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="767" y="500"/>
+	</widget>
+	<widget field="Max Elevation" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="767" y="479"/>
+	</widget>
+	<widget field="Launch Ball" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="767" y="445"/>
+	</widget>
+	<widget field="Gear Shifter" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="767" y="424"/>
+	</widget>
+	<widget field="ElevatorCollectorDown" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="767" y="390"/>
+	</widget>
+	<widget field="ElevatorAutoCalibration" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="767" y="356"/>
+	</widget>
+	<widget field="Elevator Data" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="767" y="335"/>
+	</widget>
+	<widget field="ElevateCollectorUp" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="767" y="301"/>
+	</widget>
+	<widget field="ElevateCollectorToTop" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="767" y="267"/>
+	</widget>
+	<widget field="ElevateCollectorToShooter" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="767" y="233"/>
+	</widget>
+	<widget field="ElevateCollectorToBottom" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="767" y="199"/>
+	</widget>
+	<widget field="Distance" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="767" y="178"/>
+	</widget>
+	<widget field="Current Sensor" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="767" y="157"/>
+	</widget>
+	<widget field="Current Elevation" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="767" y="136"/>
+	</widget>
+	<widget field="CollectorPurge" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="767" y="102"/>
+	</widget>
+	<widget field="CollectorFeed" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="767" y="68"/>
+	</widget>
+	<widget field="Battery" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="638"/>
+	</widget>
+	<widget field="AutonomousLaunchCommand" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="767" y="34"/>
+	</widget>
+	<widget field="AutonomousDriveCommand" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="767" y="0"/>
+	</widget>
+	<widget field="AutonomousCommmandGroup" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="604"/>
+	</widget>
+	<static-widget class="VisionExtension">
+		<location x="0" y="503"/>
 	</static-widget>
 </dashboard>
 <live-window>
