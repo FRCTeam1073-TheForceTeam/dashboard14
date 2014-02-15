@@ -21,6 +21,9 @@ public class CollecterAngle extends Widget
     private String ELEVATOR_UP = "";
     private String ELEVATOR_DOWN = "";
     private String[] ar = new String[3];
+    private double max;
+    private double min;
+    private double act; 
 
     
     
@@ -28,6 +31,7 @@ public class CollecterAngle extends Widget
     {
         collecterAngle.add("1", "3.455512345,4.023445,1.988696896986");
         collecterAngle.add("2", "0.987,6.7978,1.244587");
+        collecterAngle.add("3", "1.63,2.456,5.4655");
     }
 
     @Override
@@ -38,6 +42,9 @@ public class CollecterAngle extends Widget
         ELEVATOR_ACT = ar[0];
         ELEVATOR_UP = ar[1];
         ELEVATOR_DOWN = ar[2];
+        act = Double.parseDouble(ELEVATOR_ACT);
+        max = Double.parseDouble(ELEVATOR_UP);
+        min = Double.parseDouble(ELEVATOR_DOWN);
         
         repaint();
 
@@ -70,7 +77,14 @@ public class CollecterAngle extends Widget
         g2.setPaint(Color.BLACK);
         g2.drawString(ELEVATOR_UP, 0, size.height/3);
         
-        g2.setPaint(Color.WHITE);
+        if (act < max && act > min)
+        {
+            g2.setPaint(Color.WHITE);
+        }
+        else
+        {
+            g2.setPaint(Color.RED);
+        }
         g2.fill(new Rectangle2D.Double(0, size.height/3, size.width, size.height/3));
         
         g2.setPaint(Color.BLACK);
