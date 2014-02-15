@@ -1,19 +1,18 @@
-<head><version>2.59.10</version></head>
+<head><version>2.61.0</version></head>
 <Axis_Internet_Camera>
   <auto_back_light>TRUE</auto_back_light>
   <auto_exposure>FALSE</auto_exposure>
   <auto_white_balance>TRUE</auto_white_balance>
   <brightness_value>50</brightness_value>
-  <camera_type>1</camera_type>
   <color_level_value>50</color_level_value>
   <compression_index>5</compression_index>
   <contrast_value>50</contrast_value>
   <exposure_value>50</exposure_value>
-  <ip_address>10.10.73.9</ip_address>
-  <is_active>TRUE</is_active>
+  <ip_address>10.10.73.11</ip_address>
+  <is_active>FALSE</is_active>
   <password>admin</password>
   <port>80</port>
-  <resolution>2</resolution>
+  <refresh_index>4</refresh_index>
   <sharpness_value>50</sharpness_value>
   <username>root</username>
 </Axis_Internet_Camera>
