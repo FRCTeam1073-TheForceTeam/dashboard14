@@ -17,7 +17,7 @@ public class Distance extends Widget
     public static final DataType[] TYPES = {DataType.NUMBER };
     public static final String NAME = "Distance";
     private double value;
-    public final MultiProperty distance = new MultiProperty(this, "Distance");
+    public final MultiProperty distance = new MultiProperty(this, "distance");
     private int feet;
     private int inches;
     private int inches2;
