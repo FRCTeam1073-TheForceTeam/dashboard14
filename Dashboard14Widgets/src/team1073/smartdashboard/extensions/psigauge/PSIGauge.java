@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 
+/* As of 2/17/14 @ 8;12, this widget is now considered obsolete due the fact that MECHANICAL decided to remove the PSI Gauge last minute.
+This widget will always live on in our hearts. Later tonight a tear will be shed for each line of code. ;_;*/
+
 package team1073.smartdashboard.extensions.psigauge;
 
 import edu.wpi.first.smartdashboard.gui.Widget;

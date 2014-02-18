@@ -1,16 +1,13 @@
 <xml version="1.0">
 <dashboard>
 	<widget field="Distance" type="Number" class="team1073.smartdashboard.extensions.distance.Distance">
-		<location x="813" y="311"/>
-		<property name="Distance" value="null"/>
+		<location x="799" y="219"/>
+		<property name="distance" value="null"/>
 	</widget>
 	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.VideoStreamViewerExtension">
 		<location x="377" y="78"/>
 		<width>369</width>
 		<height>272</height>
-	</static-widget>
-	<static-widget class="VisionExtension">
-		<location x="28" y="169"/>
 	</static-widget>
 	<widget field="ElevatorAutoCalibration" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
 		<location x="1060" y="412"/>
@@ -23,20 +20,17 @@
 		<property name="Gear Status" value="null"/>
 	</widget>
 	<widget field="Elevator Data" type="String" class="team1073.smartdashboard.extensions.collectorAngle.CollecterAngle">
-		<location x="1117" y="297"/>
+		<location x="1115" y="202"/>
 		<width>64</width>
 		<property name="Collecter Angle" value="null"/>
-	</widget>
-	<widget field="PSI Gauge" type="Number" class="team1073.smartdashboard.extensions.psigauge.PSIGauge">
-		<location x="824" y="68"/>
-		<property name="PSI" value="null"/>
 	</widget>
 	<widget field="TimeCounterWidget" type="Number" class="team1073.smartdashboard.extensions.timecounter.TimeCounterWidget">
 		<location x="496" y="16"/>
 		<property name="Time" value="null"/>
 	</widget>
 	<widget field="Shooter Ready" type="Number" class="team1073.smartdashboard.extensions.shooterready.ShooterReadyWidget">
-		<location x="385" y="371"/>
+		<location x="881" y="90"/>
+		<width>211</width>
 		<property name="Pneumatics Status" value="null"/>
 	</widget>
 	<widget field="Current Sensor" type="Number" class="team1073.smartdashboard.extensions.currentsensor.CurrentSensorWidget">
@@ -44,7 +38,7 @@
 		<property name="Current" value="null"/>
 	</widget>
 	<widget field="Battery" type="Number" class="team1073.smartdashboard.extensions.battery.BatteryWidget">
-		<location x="181" y="128"/>
+		<location x="129" y="126"/>
 		<property name="Battery Status" value="null"/>
 	</widget>
 	<widget field="Shooter Data" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
@@ -62,23 +56,5 @@
 </dashboard>
 <live-window>
 </live-window>
-	<hidden field="ElevateCollectorToBottom"/>
-	<hidden field="ShiftLowGear"/>
-	<hidden field="WaitForHotGoal"/>
-	<hidden field="TalonCalibratePositive"/>
-	<hidden field="TestNextRobotStatus"/>
-	<hidden field="ElevateCollectorUp"/>
-	<hidden field="AutonomousDriveCommand"/>
-	<hidden field="AutonomousCommmandGroup"/>
-	<hidden field="ShiftHighGear"/>
-	<hidden field="ElevateCollectorToTop"/>
-	<hidden field="CollectorFeed"/>
-	<hidden field="TalonCalibrateNegative"/>
-	<hidden field="ToggleForwardDirection"/>
-	<hidden field="AutonomousLaunchCommand"/>
-	<hidden field="CollectorPurge"/>
-	<hidden field="Launch Ball"/>
-	<hidden field="ElevatorCollectorDown"/>
-	<hidden field="ToggleDriveOrientation"/>
-	<hidden field="ElevateCollectorToShooter"/>
+	<hidden field="PSI Gauge"/>
 </xml>
