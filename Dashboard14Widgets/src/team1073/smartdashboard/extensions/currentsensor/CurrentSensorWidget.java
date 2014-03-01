@@ -56,6 +56,8 @@ public class CurrentSensorWidget extends Widget
         
         Dimension size = getSize();
         g.setColor(Color.black);
+        if (value > 100)
+            g.setColor(Color.RED);
         g.fillRect(0, 0, size.width, size.height);
         
         
