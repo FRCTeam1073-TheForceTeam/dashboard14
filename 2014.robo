@@ -1,18 +1,19 @@
-<head><version>2.61.0</version></head>
+<head><version>2.61.8</version></head>
 <Axis_Internet_Camera>
   <auto_back_light>TRUE</auto_back_light>
   <auto_exposure>FALSE</auto_exposure>
   <auto_white_balance>TRUE</auto_white_balance>
   <brightness_value>50</brightness_value>
+  <camera_type>1</camera_type>
   <color_level_value>50</color_level_value>
-  <compression_index>5</compression_index>
+  <compression_index>3</compression_index>
   <contrast_value>50</contrast_value>
   <exposure_value>50</exposure_value>
-  <ip_address>10.10.73.11</ip_address>
+  <ip_address>10.10.73.9</ip_address>
   <is_active>FALSE</is_active>
   <password>admin</password>
   <port>80</port>
-  <refresh_index>4</refresh_index>
+  <resolution>3</resolution>
   <sharpness_value>50</sharpness_value>
   <username>root</username>
 </Axis_Internet_Camera>
@@ -27,11 +28,6 @@
   <crop_image>FALSE</crop_image>
   <scale>1000.0</scale>
 </Radial_Distortion>
-<Marker>
-  <include_graphics>0</include_graphics>
-  <name>flat</name>
-  <revert_to>Current</revert_to>
-</Marker>
 <Color_Filter disabled>
   <pipe_color>16777215</pipe_color>
   <adjust_lighting>FALSE</adjust_lighting>
@@ -44,6 +40,11 @@
   <min_intensity>100</min_intensity>
   <result_type>1</result_type>
 </Color_Filter>
+<Marker>
+  <include_graphics>0</include_graphics>
+  <name>flat</name>
+  <revert_to>Current</revert_to>
+</Marker>
 <RGB_Filter>
   <channel>2</channel>
   <hue_value>50</hue_value>
